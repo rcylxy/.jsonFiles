@@ -1,0 +1,132 @@
+{
+    
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "yapf",
+    "python.linting.flake8Args": ["--max-line-length=248"],
+    "python.linting.pylintEnabled": false,
+    "explorer.confirmDelete": false,
+    "python.pythonPath": "D:/python",
+    "editor.mouseWheelZoom": true,
+    "files.encoding": "utf8",
+    "[python]": {
+        "files.encoding": "utf8"
+    }, 
+      "files.defaultLanguage": "cpp", // ctrl+N新建文件后默认的语言
+      "editor.formatOnType": true,  // 输入分号(C/C++的语句结束标识)后自动格式化当前这一行的代码
+      "editor.suggest.snippetsPreventQuickSuggestions": false, // clangd的snippets有很多的跳转点，不用这个就必须手动触发Intellisense了
+      "editor.acceptSuggestionOnEnter": "off", // 我个人的习惯，按回车时一定是真正的换行，只有tab才会接受Intellisense
+      // "editor.snippetSuggestions": "top", // （可选）snippets显示在补全列表顶端，默认是inline
+  
+      "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
+      "code-runner.executorMap": {
+          "c": "gcc '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -lm -static-libgcc -std=c11 -fexec-charset=GBK && &'./$fileNameWithoutExt.exe'",
+          "cpp": "g++ '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -static-libgcc -std=c++14 -fexec-charset=GBK && &'./$fileNameWithoutExt.exe'"
+          // "c": "gcc $fileName -o $fileNameWithoutExt.exe -Wall -O2 -m64 -lm -static-libgcc -std=c11 -fexec-charset=GBK && $dir$fileNameWithoutExt.exe",
+          // "cpp": "g++ $fileName -o $fileNameWithoutExt.exe -Wall -O2 -m64 -static-libgcc -std=c++14 -fexec-charset=GBK && $dir$fileNameWithoutExt.exe"
+      }, // 右键run code时运行的命令；未注释的仅适用于PowerShell（Win10默认）和pwsh，文件名中有空格也可以编译运行；注释掉的适用于cmd（win7默认）、PS和bash，但文件名中有空格时无法运行
+      "code-runner.saveFileBeforeRun": true, // run code前保存
+      "code-runner.preserveFocus": true,     // 若为false，run code后光标会聚焦到终端上。如果需要频繁输入数据可设为false
+      "code-runner.clearPreviousOutput": false, // 每次run code前清空属于code runner的终端消息，默认false
+      "code-runner.ignoreSelection": true,   // 默认为false，效果是鼠标选中一块代码后可以单独执行，但C是编译型语言，不适合这样用
+      "code-runner.fileDirectoryAsCwd": true, // 将code runner终端的工作目录切换到文件目录再运行，对依赖cwd的程序产生影响；如果为false，executorMap要加cd $dir
+  
+      "C_Cpp.clang_format_sortIncludes": true, // 格式化时调整include的顺序（按字母排序） 
+      //终端颜色配置
+  // "workbench.colorCustomizations" : 
+  // {
+  //   //可以将鼠标放到下面的色号上根据自己的偏好进行选择
+  //   "terminal.foreground" : "#faf3f8",
+  //    "terminal.background" : "#2b2424"
+  //  },
+   "terminal.integrated.cursorBlinking": true,
+   "terminal.integrated.lineHeight": 1.2,
+   "terminal.integrated.letterSpacing": 0.1,
+   "terminal.integrated.fontSize": 16, //字体大小设置
+   "terminal.integrated.fontFamily": "Lucida Console", //字体设置
+//    "workbench.colorCustomizations": {
+//     "terminal.background": "#181818",
+//     "terminal.foreground": "#e02683",
+//     "terminalCursor.background": "#D8D8D8",
+//     "terminalCursor.foreground": "#D8D8D8",
+//     "terminal.ansiBlack": "#181818",
+//     "terminal.ansiBlue": "#7CAFC2",
+//     "terminal.ansiBrightBlack": "#585858",
+//     "terminal.ansiBrightBlue": "#7CAFC2",
+//     "terminal.ansiBrightCyan": "#86C1B9",
+//     "terminal.ansiBrightGreen": "#A1B56C",
+//     "terminal.ansiBrightMagenta": "#BA8BAF",
+//     "terminal.ansiBrightRed": "#AB4642",
+//     "terminal.ansiBrightWhite": "#F8F8F8",
+//     "terminal.ansiBrightYellow": "#F7CA88",
+//     "terminal.ansiCyan": "#86C1B9",
+//     "terminal.ansiGreen": "#A1B56C",
+//     "terminal.ansiMagenta": "#BA8BAF",
+//     "terminal.ansiRed": "#AB4642",
+//     "terminal.ansiWhite": "#D8D8D8",
+//     "terminal.ansiYellow": "#F7CA88",
+//     "terminal.integrated.cursorBlinking": true,
+//     "terminal.integrated.lineHeight": 1.6,
+//     "terminal.integrated.letterSpacing": 0.1,
+//     "terminal.integrated.fontSize": 30, //字体大小设置
+//     "terminal.integrated.fontFamily": "Lucida Console", //字体设置
+//     "terminal.integrated.shell.linux": "/bin/zsh",
+// },
+
+   
+      // tab 小为2个空格
+      "editor.tabSize": 2,
+      // 100 列后换行
+      "editor.wordWrapColumn": 100,
+      // 保存时格式化
+      "editor.formatOnSave": true,
+      // 开启 vscode 文件路径导航
+      "breadcrumbs.enabled": true,
+      // prettier 设置语句末尾不加分号
+      "prettier.semi": false,
+      // prettier 设置强制单引号
+      "prettier.singleQuote": true,
+      // 选择 vue 文件中 template 的格式化工具
+      "vetur.format.defaultFormatter.html": "prettyhtml",
+      // 显示 markdown 中英文切换时产生的特殊字符
+      "editor.renderControlCharacters": true,
+      // 设置 eslint 保存时自动修复
+     // "eslint.autoFixOnSave": true,
+      // eslint 检测文件类型
+      "eslint.validate": [
+         "vue",
+         "html",
+         "javascript",
+         "typescript",
+         "javascriptreact",
+         "typescriptreact"
+      ],
+      // vetur 的自定义设置
+      "vetur.format.defaultFormatterOptions": {
+        "prettier": {
+          "singleQuote": true,
+          "semi": false
+        }
+      },
+      // vue 扩展的文件默认使用 prettier 进行格式化
+    //  "files.encoding": "utf8",
+       "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "files.autoGuessEncoding": true,
+      "[cpp]": {
+          "files.encoding": "utf8"
+      },
+      "[c]": {
+          "files.encoding": "utf8"
+      },
+      "explorer.confirmDragAndDrop": false,
+      "bracketPairColorizer.depreciation-notice": false,
+      "bracket-pair-colorizer-2.depreciation-notice": false,
+      "diffEditor.ignoreTrimWhitespace": false,
+      "terminal.background":"#0C0D0E",
+
+    }
+    
+  
+  
+       
